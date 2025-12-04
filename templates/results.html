@@ -12,12 +12,16 @@
     <hr>
     {% for item in results_list %}
         <div class="pb-3">
-            <div class="doc-title">
-                <a href="{{ item.url }}">{{ item.title }}...
+            <div class="doc-title", style="font-weight: bold;">
+                <a href="{{ item.url }}&rank={{ loop.index }}">{{ item.title }} <!-- Added rank of document -->
                 </a>
             </div>
-            <div class="doc-desc">
-                {{ item.doc_date }} — {{ item.description }}
+            <div class="doc-desc" style="padding-left: 20px;">
+                <p>— {{ item.description }}</p> 
+                <p>— Selling price: {{ item.selling_price }}$</p>            
+                <p>— Discount: {{ item.discount }}$</p>            
+                <p>— Average rating: {{ "★" * item.average_rating|int }} ({{ item.average_rating }}/5)</p>                
+                <p>— <a href="{{ item.product_url }}" target="_blank">Open product link</a></p>
             </div>
 
         </div>

@@ -6,13 +6,42 @@
 </head>
 <body>
 <div><a href="/" >Home</a></div>
+<a href="/search?from=details">Results</a>
 <div><a href="/stats" >Stats</a></div>
 <div><a href="/dashboard" >Dashboard</a></div>
-<h1>Document Detail Page</h1>
+<!-- <h1>Document Detail Page</h1>
 <p>This is a placeholder for document details.</p>
 <p>Here you can display more information about the document.</p>
 <p>For example, you might show the full text of the document, metadata, or other relevant details.</p>
 <p>You can also include links to related documents or resources.</p>
-<p>Feel free to customize this page to fit the needs of your application.</p>
+<p>Feel free to customize this page to fit the needs of your application.</p> -->
+<h1>{{ doc.title }}</h1>
+<p><strong>Description:</strong> {{ doc.description }}</p>
+<p><strong>Brand:</strong> {{ doc.brand }}</p>
+<p><strong>Category:</strong> {{ doc.category }}</p>
+
+<p><strong>Availability:</strong>
+{% if doc.out_of_stock == 0 %}
+    <span style="color: green; font-weight: bold;">Available</span>
+{% else %}
+    <span style="color: red; font-weight: bold;">Not available</span>
+{% endif %}
+</p>
+
+<p><strong>Price:</strong> {{ doc.selling_price }}$</p>
+<p><strong>Discount:</strong> {{ doc.discount }}$</p>
+<p><strong>Average rating:</strong> {{ "★" * doc.average_rating|int }} ({{ doc.average_rating }}/5)</p>
+
+{% if doc.images %}
+    <p><strong>Images:</strong></p>
+    {% for img_url in doc.images %}
+        <img src="{{ img_url }}" alt="Document image" style="max-width:300px; margin:10px;">
+    {% endfor %}
+{% else %}
+    <p><strong>Images:</strong> No images available.</p>
+{% endif %}
+
+<p><strong>URL:</strong> <a href="{{ doc.url }}" target="_blank">Open Product Link</a></p>
+
 </body>
 </html>

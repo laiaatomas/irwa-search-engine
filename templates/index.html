@@ -8,6 +8,14 @@
         <form class="d-flex" method="POST" onSubmit='return validate();' action="/search">
             <input class="form-control me-2" name="search-query" type="search" placeholder="Search" aria-label="Search"
                    autofocus="autofocus">
+
+            <select class="form-select me-2" name="search-algorithm">
+                <option value="tfidf" selected>TF-IDF (AND query)</option>
+                <option value="bm25">BM25 (AND query) </option>
+                <option value="tfidf-or">TF-IDF (OR query)</option>
+                <option value="bm25-or">BM25 (OR query)</option>
+            </select>
+
             <button class="btn btn-primary" type="submit" onclick='this.form.submit();'>Search</button>
             <input name="upf-irwa-hidden" type="hidden" value="123">
         </form>

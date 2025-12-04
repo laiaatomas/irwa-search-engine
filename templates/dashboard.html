@@ -22,8 +22,63 @@
 
     -->
 
-    <h3>Dashboard</h3>
-    <iframe src="/plot_number_of_views" width="600" height="400" style="border: none;"></iframe>
+    <h2>Dashboard</h2>
+
+    <h3>Query and document graphs</h3>
+    <table>
+        <tr>
+            <td>
+                <iframe src="/plot_number_of_views" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_query_frequency" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <iframe src="/distribution_rank_clicked_docs" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_average_dwell_time_by_rank" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Session graphs</h3>
+    <table>
+        <tr>
+            <td>
+                <iframe src="/plot_hourly_usage_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_browser_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <iframe src="/plot_platform_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_os_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <iframe src="/plot_bot_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_requests_by_method" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+                <tr>
+            <td>
+                <iframe src="/plot_ip_country_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+            <td>
+                <iframe src="/plot_ip_city_distribution" width="600" height="400" style="border: none;"></iframe>
+            </td>
+        </tr>
+    </table>
 
 
 {% endblock %}

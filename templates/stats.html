@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block page_title %}{{ page_title }}{% endblock %}
 {% block content %}
-    <h2>Quick Stats</h2>
+    <h2>Quick Document Stats</h2>
     <h4>Clicked docs:</h4>
 
     {% for doc in clicks_data %}
@@ -12,4 +12,29 @@
         </div>
         <hr>
     {% endfor %}
+    <h4>Average rank of clicked documents: {{avg_rank}}</h4>
+    <h4>Total number of document clicks: {{total_clicks}}</h4>
+    <h4>Total number of unique clicked documents: {{unique_docs}}</h4>
+    <h4>Average dwell time (in seconds): {{avg_dwell_time}}</h4>
+
+    <br><br>
+    <h2>Quick Query Stats</h2>
+
+    <h4>Total number of searches: {{num_searches}}</h4>
+    <h4>Total number of unique searched queries: {{unique_queries}}</h4>
+    <h4>Average number of query terms: {{avg_num_terms}}</h4>
+
+    <h4>Top 10 most searched terms (and frequency):</h4>
+    {% for term, freq in top_10_q_terms %}
+        <div class="text-dark">Term: {{ term }}</div>
+        <div class="text-dark">Frequency: {{ freq }}</div>
+        <hr>
+    {% endfor %}
+
+    <h2>Quick Session Stats</h2>
+
+    <h4>Average duration of sessions: {{avg_session_duration}}</h4>
+    <h4>Total number of requests: {{num_requests}}</h4>
+
+
 {% endblock %}
