@@ -1,4 +1,4 @@
-# Information Retrieval and Web Analytics (IRWA) - Final Project template
+# Information Retrieval and Web Analytics (IRWA) - Final Project 
 
 <table>
   <tr>
@@ -6,7 +6,7 @@
       <img src="static/image.png" alt="Project Logo"/>
     </td>
     <td style="vertical-align: top;">
-      This repository contains the template code for the IRWA Final Project - Search Engine with Web Analytics.
+      This repository contains the implemented code from the template for the IRWA Final Project - Search Engine with Web Analytics.
       The project is implemented using Python and the Flask web framework. It includes a simple web application that allows users to search through a collection of documents and view analytics about their searches.
     </td>
   </tr>
