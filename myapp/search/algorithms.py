@@ -79,17 +79,17 @@ def search_in_corpus(algorithm, query, corpus):
         print("Opening TF-IDF index...")
         full_path = os.path.realpath(__file__)
         path, filename = os.path.split(full_path)
-        file_path = path + r"\tfidf_index.dill"
+        file_path = path + "/tfidf_index.dill"
 
         with open(file_path, "rb") as f:
             TFIDF_INDEX = dill.load(f)
         print("TF-IDF index opened.")
     
-    elif BM25_INDEX is None and (algorithm=='bm25' or algorithm=='bm25-or'): # borrar ourscore
+    elif BM25_INDEX is None and (algorithm=='bm25' or algorithm=='bm25-or'): 
         print("Opening BM25 index...")
         full_path = os.path.realpath(__file__)
         path, filename = os.path.split(full_path)
-        file_path = path + r"\bm25_index.dill"
+        file_path = path + "/bm25_index.dill"
 
         with open(file_path, "rb") as f:
             BM25_INDEX = dill.load(f)
