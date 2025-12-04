@@ -137,3 +137,6 @@ dmypy.json
 irwa_env/
 data/
 ".env" 
+
+# Large files
+geo2ip/GeoLite2-City.mmdb
